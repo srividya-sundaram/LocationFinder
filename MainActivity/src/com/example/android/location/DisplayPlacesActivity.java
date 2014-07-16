@@ -38,7 +38,7 @@ public class DisplayPlacesActivity extends Activity {
 		
 		setContentView(R.layout.activity_display_places);
 		 // Get the message from the intent
-		//checking commit 
+		//checking commit again
 	    Intent intent = getIntent();
 	    String[] message = intent.getStringArrayExtra(MainActivity.EXTRA_MESSAGE);
 	    place1 = (TextView) findViewById(R.id.place1);
