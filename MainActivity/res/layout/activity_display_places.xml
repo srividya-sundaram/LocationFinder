@@ -1,0 +1,130 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TextView
+        android:id="@+id/place1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/unknown" />
+
+        <TextView
+            android:id="@+id/place2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/place1"
+            android:layout_below="@+id/place1"
+            android:layout_marginTop="28dp"
+            android:text="@string/unknown"
+            android:textIsSelectable="true" />
+
+        <TextView
+            android:id="@+id/place3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/place2"
+            android:layout_below="@+id/place2"
+            android:layout_marginTop="37dp"
+            android:text="@string/unknown"
+            android:textIsSelectable="true" />
+        
+        
+         <TextView
+            android:id="@+id/place4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/place2"
+            android:layout_below="@+id/place3"
+            android:layout_marginTop="37dp"
+            android:text="@string/unknown"
+            android:textIsSelectable="true" />
+        
+         
+          <TextView
+            android:id="@+id/place5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/place2"
+            android:layout_below="@+id/place4"
+            android:layout_marginTop="37dp"
+            android:text="@string/unknown"
+            android:textIsSelectable="true" />
+          
+          
+          
+           <TextView
+            android:id="@+id/place6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/place2"
+            android:layout_below="@+id/place5"
+            android:layout_marginTop="37dp"
+            android:text="@string/unknown"
+            android:textIsSelectable="true" />
+        
+           
+            <TextView
+            android:id="@+id/place7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/place2"
+            android:layout_below="@+id/place6"
+            android:layout_marginTop="37dp"
+            android:text="@string/unknown"
+            android:textIsSelectable="true" />
+        
+        
+         <TextView
+            android:id="@+id/place8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/place2"
+            android:layout_below="@+id/place7"
+            android:layout_marginTop="37dp"
+            android:text="@string/unknown"
+            android:textIsSelectable="true" />
+
+          <TextView
+              android:id="@+id/place9"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentRight="true"
+              android:layout_alignTop="@+id/place1"
+              android:layout_marginRight="40dp"
+              android:text="@string/unknown"
+              android:textIsSelectable="true" />
+          
+          
+           <TextView
+              android:id="@+id/place10"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_alignParentRight="true"
+              android:layout_alignTop="@+id/place1"
+              android:layout_marginRight="40dp"
+              android:text="@string/unknown"
+              android:textIsSelectable="true" />
+
+           <TextView
+               android:id="@+id/place11"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_above="@+id/place3"
+               android:layout_alignLeft="@+id/place9"
+               android:text="@string/unknown" />
+
+           <TextView
+               android:id="@+id/place12"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_above="@+id/place4"
+               android:layout_alignLeft="@+id/place11"
+               android:text="@string/unknown" />
+    
+</RelativeLayout>
