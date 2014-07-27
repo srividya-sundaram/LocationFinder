@@ -34,9 +34,15 @@
     <string name="action_settings">Settings</string>
 
     <!-- Labels -->
-    <string name="latlng">Lat/Long:</string>
-    <string name="address">Address:</string>
     <string name="radius">Radius:</string>
+    <!-- Activities -->
+    <string name="hiking">Hiking</string>
+    <string name="rv_park">RV Park</string>
+    <string name="camping">Camping</string>
+    <string name="fishing">Fishing</string>
+    <string name="bowling">Bowling</string>
+    
+    
 
     <!-- Messages -->
     <string name="connected">Client connected Check</string>

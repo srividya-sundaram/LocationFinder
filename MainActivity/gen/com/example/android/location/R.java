@@ -1330,43 +1330,48 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int back1=0x7f020057;
-        public static final int back3=0x7f020058;
-        public static final int back4=0x7f020059;
-        public static final int back5=0x7f02005a;
-        public static final int common_signin_btn_icon_dark=0x7f02005b;
-        public static final int common_signin_btn_icon_disabled_dark=0x7f02005c;
-        public static final int common_signin_btn_icon_disabled_focus_dark=0x7f02005d;
-        public static final int common_signin_btn_icon_disabled_focus_light=0x7f02005e;
-        public static final int common_signin_btn_icon_disabled_light=0x7f02005f;
-        public static final int common_signin_btn_icon_focus_dark=0x7f020060;
-        public static final int common_signin_btn_icon_focus_light=0x7f020061;
-        public static final int common_signin_btn_icon_light=0x7f020062;
-        public static final int common_signin_btn_icon_normal_dark=0x7f020063;
-        public static final int common_signin_btn_icon_normal_light=0x7f020064;
-        public static final int common_signin_btn_icon_pressed_dark=0x7f020065;
-        public static final int common_signin_btn_icon_pressed_light=0x7f020066;
-        public static final int common_signin_btn_text_dark=0x7f020067;
-        public static final int common_signin_btn_text_disabled_dark=0x7f020068;
-        public static final int common_signin_btn_text_disabled_focus_dark=0x7f020069;
-        public static final int common_signin_btn_text_disabled_focus_light=0x7f02006a;
-        public static final int common_signin_btn_text_disabled_light=0x7f02006b;
-        public static final int common_signin_btn_text_focus_dark=0x7f02006c;
-        public static final int common_signin_btn_text_focus_light=0x7f02006d;
-        public static final int common_signin_btn_text_light=0x7f02006e;
-        public static final int common_signin_btn_text_normal_dark=0x7f02006f;
-        public static final int common_signin_btn_text_normal_light=0x7f020070;
-        public static final int common_signin_btn_text_pressed_dark=0x7f020071;
-        public static final int common_signin_btn_text_pressed_light=0x7f020072;
-        public static final int ic_launcher=0x7f020073;
-        public static final int ic_plusone_medium_off_client=0x7f020074;
-        public static final int ic_plusone_small_off_client=0x7f020075;
-        public static final int ic_plusone_standard_off_client=0x7f020076;
-        public static final int ic_plusone_tall_off_client=0x7f020077;
-        public static final int powered_by_google_dark=0x7f020078;
-        public static final int powered_by_google_light=0x7f020079;
-        public static final int travellericon=0x7f02007a;
-        public static final int yellow_point=0x7f02007b;
+        public static final int arrow=0x7f020057;
+        public static final int arrows=0x7f020058;
+        public static final int back1=0x7f020059;
+        public static final int back3=0x7f02005a;
+        public static final int back4=0x7f02005b;
+        public static final int back5=0x7f02005c;
+        public static final int common_signin_btn_icon_dark=0x7f02005d;
+        public static final int common_signin_btn_icon_disabled_dark=0x7f02005e;
+        public static final int common_signin_btn_icon_disabled_focus_dark=0x7f02005f;
+        public static final int common_signin_btn_icon_disabled_focus_light=0x7f020060;
+        public static final int common_signin_btn_icon_disabled_light=0x7f020061;
+        public static final int common_signin_btn_icon_focus_dark=0x7f020062;
+        public static final int common_signin_btn_icon_focus_light=0x7f020063;
+        public static final int common_signin_btn_icon_light=0x7f020064;
+        public static final int common_signin_btn_icon_normal_dark=0x7f020065;
+        public static final int common_signin_btn_icon_normal_light=0x7f020066;
+        public static final int common_signin_btn_icon_pressed_dark=0x7f020067;
+        public static final int common_signin_btn_icon_pressed_light=0x7f020068;
+        public static final int common_signin_btn_text_dark=0x7f020069;
+        public static final int common_signin_btn_text_disabled_dark=0x7f02006a;
+        public static final int common_signin_btn_text_disabled_focus_dark=0x7f02006b;
+        public static final int common_signin_btn_text_disabled_focus_light=0x7f02006c;
+        public static final int common_signin_btn_text_disabled_light=0x7f02006d;
+        public static final int common_signin_btn_text_focus_dark=0x7f02006e;
+        public static final int common_signin_btn_text_focus_light=0x7f02006f;
+        public static final int common_signin_btn_text_light=0x7f020070;
+        public static final int common_signin_btn_text_normal_dark=0x7f020071;
+        public static final int common_signin_btn_text_normal_light=0x7f020072;
+        public static final int common_signin_btn_text_pressed_dark=0x7f020073;
+        public static final int common_signin_btn_text_pressed_light=0x7f020074;
+        public static final int flag2=0x7f020075;
+        public static final int ic_launcher=0x7f020076;
+        public static final int ic_plusone_medium_off_client=0x7f020077;
+        public static final int ic_plusone_small_off_client=0x7f020078;
+        public static final int ic_plusone_standard_off_client=0x7f020079;
+        public static final int ic_plusone_tall_off_client=0x7f02007a;
+        public static final int powered_by_google_dark=0x7f02007b;
+        public static final int powered_by_google_light=0x7f02007c;
+        public static final int small_flag=0x7f02007d;
+        public static final int travellericon=0x7f02007e;
+        public static final int user=0x7f02007f;
+        public static final int yellow_point=0x7f020080;
     }
     public static final class id {
         public static final int action_bar=0x7f05002e;
@@ -1381,15 +1386,15 @@ containing a value of this type.
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050036;
         public static final int activity_chooser_view_content=0x7f050037;
-        public static final int address=0x7f05005e;
-        public static final int address_progress=0x7f05005d;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
         public static final int book_now=0x7f050028;
-        public static final int button_suggestions=0x7f050062;
+        public static final int bowling=0x7f050055;
+        public static final int button_suggestions=0x7f050057;
         public static final int buyButton=0x7f050022;
         public static final int buy_now=0x7f050027;
         public static final int buy_with_google=0x7f050026;
+        public static final int camping=0x7f050053;
         public static final int checkbox=0x7f05003f;
         public static final int classic=0x7f050029;
         public static final int collapseActionView=0x7f05000d;
@@ -1397,14 +1402,14 @@ containing a value of this type.
         public static final int dialog=0x7f05000e;
         public static final int disableHome=0x7f050008;
         public static final int dropdown=0x7f05000f;
-        public static final int editText1=0x7f050063;
+        public static final int editText1=0x7f050056;
         public static final int edit_query=0x7f050042;
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050038;
         public static final int expanded_menu=0x7f05003e;
-        public static final int get_address_button=0x7f050064;
-        public static final int get_location_button=0x7f050065;
+        public static final int fishing=0x7f050054;
         public static final int grayscale=0x7f05002a;
+        public static final int hiking=0x7f050051;
         public static final int holo_dark=0x7f05001d;
         public static final int holo_light=0x7f05001e;
         public static final int home=0x7f050014;
@@ -1413,36 +1418,23 @@ containing a value of this type.
         public static final int icon=0x7f05003c;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050039;
-        public static final int imageView1=0x7f05006f;
-        public static final int label_address=0x7f05005f;
-        public static final int label_lat_lng=0x7f05005c;
-        public static final int label_radius=0x7f050067;
-        public static final int lat_lng=0x7f05005b;
+        public static final int label_radius=0x7f050050;
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f05003b;
-        public static final int main_layout=0x7f05005a;
+        public static final int main_layout=0x7f05004e;
+        public static final int map=0x7f050058;
         public static final int match_parent=0x7f050024;
         public static final int middle=0x7f050012;
         public static final int monochrome=0x7f05002b;
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
-        public static final int place1=0x7f05004e;
-        public static final int place10=0x7f050057;
-        public static final int place11=0x7f050058;
-        public static final int place12=0x7f050059;
-        public static final int place2=0x7f05004f;
-        public static final int place3=0x7f050050;
-        public static final int place4=0x7f050051;
-        public static final int place5=0x7f050052;
-        public static final int place6=0x7f050053;
-        public static final int place7=0x7f050054;
-        public static final int place8=0x7f050055;
-        public static final int place9=0x7f050056;
         public static final int production=0x7f05001f;
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;
         public static final int radio=0x7f050041;
+        public static final int radioGroup1=0x7f05004f;
+        public static final int rv_park=0x7f050052;
         public static final int sandbox=0x7f050020;
         public static final int satellite=0x7f05001a;
         public static final int search_badge=0x7f050044;
@@ -1465,16 +1457,6 @@ containing a value of this type.
         public static final int submit_area=0x7f05004b;
         public static final int tabMode=0x7f050002;
         public static final int terrain=0x7f05001b;
-        public static final int textView1=0x7f050066;
-        public static final int textView2=0x7f050069;
-        public static final int textView3=0x7f050068;
-        public static final int textView4=0x7f05006a;
-        public static final int textView5=0x7f05006b;
-        public static final int textView6=0x7f05006c;
-        public static final int textView7=0x7f05006d;
-        public static final int textView8=0x7f05006e;
-        public static final int text_connection_state=0x7f050060;
-        public static final int text_connection_status=0x7f050061;
         public static final int title=0x7f05003d;
         public static final int top_action_bar=0x7f050032;
         public static final int up=0x7f050033;
@@ -1532,12 +1514,12 @@ containing a value of this type.
         public static final int abc_popup_menu_item_layout=0x7f030014;
         public static final int abc_search_dropdown_item_icons_2line=0x7f030015;
         public static final int abc_search_view=0x7f030016;
-        public static final int activity_display_places=0x7f030017;
-        public static final int activity_main=0x7f030018;
+        public static final int activity_main=0x7f030017;
+        public static final int map=0x7f030018;
         public static final int support_simple_spinner_dropdown_item=0x7f030019;
     }
     public static final class string {
-        public static final int IO_Exception_getFromLocation=0x7f0a004f;
+        public static final int IO_Exception_getFromLocation=0x7f0a0052;
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
         public static final int abc_action_bar_home_description=0x7f0a0001;
@@ -1581,7 +1563,6 @@ containing a value of this type.
         /**  Menu title 
          */
         public static final int action_settings=0x7f0a0040;
-        public static final int address=0x7f0a0042;
         /**  User interface labels and strings 
  Address format 
          */
@@ -1597,6 +1578,8 @@ containing a value of this type.
         public static final int auth_client_play_services_err_notification_msg=0x7f0a0011;
         public static final int auth_client_requested_by_msg=0x7f0a0012;
         public static final int auth_client_using_bad_version_title=0x7f0a000d;
+        public static final int bowling=0x7f0a0046;
+        public static final int camping=0x7f0a0044;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -1688,9 +1671,9 @@ containing a value of this type.
         public static final int common_signin_button_text_long=0x7f0a002b;
         /**  Messages 
          */
-        public static final int connected=0x7f0a0044;
+        public static final int connected=0x7f0a0047;
         public static final int connection_error_code=0x7f0a002d;
-        public static final int connection_error_code_unknown=0x7f0a0045;
+        public static final int connection_error_code_unknown=0x7f0a0048;
         public static final int connection_error_disabled=0x7f0a002e;
         public static final int connection_error_internal=0x7f0a002f;
         public static final int connection_error_invalid=0x7f0a0030;
@@ -1704,46 +1687,50 @@ containing a value of this type.
         public static final int connection_error_outdated=0x7f0a0038;
         public static final int connection_error_sign_in_required=0x7f0a0039;
         public static final int connection_error_unknown=0x7f0a003a;
-        public static final int connection_failed=0x7f0a0046;
-        public static final int disconnected=0x7f0a0047;
+        public static final int connection_failed=0x7f0a0049;
+        public static final int disconnected=0x7f0a004a;
+        public static final int fishing=0x7f0a0045;
         /**  Buttons 
          */
-        public static final int get_address=0x7f0a0048;
-        public static final int get_location=0x7f0a0049;
-        public static final int get_radius=0x7f0a004a;
-        public static final int hello_world=0x7f0a0065;
-        public static final int illegal_argument_exception=0x7f0a004c;
-        public static final int invalid_action=0x7f0a004d;
-        public static final int invalid_integer_id=0x7f0a004e;
+        public static final int get_address=0x7f0a004b;
+        public static final int get_location=0x7f0a004c;
+        public static final int get_radius=0x7f0a004d;
+        public static final int hello_world=0x7f0a0068;
+        /**  Activities 
+         */
+        public static final int hiking=0x7f0a0042;
+        public static final int illegal_argument_exception=0x7f0a004f;
+        public static final int invalid_action=0x7f0a0050;
+        public static final int invalid_integer_id=0x7f0a0051;
         /**  Latitude, longitude format 
          */
         public static final int latitude_longitude=0x7f0a003f;
+        public static final int location_requested=0x7f0a0053;
+        public static final int location_update_error=0x7f0a0055;
+        public static final int location_update_error_detail=0x7f0a0056;
+        public static final int location_update_missing_update=0x7f0a0057;
+        public static final int location_updated=0x7f0a0054;
+        public static final int location_updates_stopped=0x7f0a0058;
+        public static final int log_new_location=0x7f0a0059;
+        public static final int no_address_found=0x7f0a005a;
+        public static final int no_connection=0x7f0a005b;
+        public static final int no_geocoder_available=0x7f0a005c;
+        public static final int no_location_available=0x7f0a005d;
+        public static final int no_resolution=0x7f0a005f;
+        public static final int periodic_update_stop=0x7f0a0060;
+        public static final int play_services_available=0x7f0a0061;
         /**  Labels 
          */
-        public static final int latlng=0x7f0a0041;
-        public static final int location_requested=0x7f0a0050;
-        public static final int location_update_error=0x7f0a0052;
-        public static final int location_update_error_detail=0x7f0a0053;
-        public static final int location_update_missing_update=0x7f0a0054;
-        public static final int location_updated=0x7f0a0051;
-        public static final int location_updates_stopped=0x7f0a0055;
-        public static final int log_new_location=0x7f0a0056;
-        public static final int no_address_found=0x7f0a0057;
-        public static final int no_connection=0x7f0a0058;
-        public static final int no_geocoder_available=0x7f0a0059;
-        public static final int no_location_available=0x7f0a005a;
-        public static final int no_resolution=0x7f0a005c;
-        public static final int periodic_update_stop=0x7f0a005d;
-        public static final int play_services_available=0x7f0a005e;
-        public static final int radius=0x7f0a0043;
-        public static final int request_location_updates_in_progress=0x7f0a005f;
-        public static final int resolved=0x7f0a005b;
-        public static final int start_updates=0x7f0a0060;
-        public static final int stop_updates=0x7f0a0061;
-        public static final int suggestions=0x7f0a004b;
-        public static final int title_activity_display_places=0x7f0a0064;
-        public static final int unknown=0x7f0a0062;
-        public static final int unknown_activity_request_code=0x7f0a0063;
+        public static final int radius=0x7f0a0041;
+        public static final int request_location_updates_in_progress=0x7f0a0062;
+        public static final int resolved=0x7f0a005e;
+        public static final int rv_park=0x7f0a0043;
+        public static final int start_updates=0x7f0a0063;
+        public static final int stop_updates=0x7f0a0064;
+        public static final int suggestions=0x7f0a004e;
+        public static final int title_activity_display_places=0x7f0a0067;
+        public static final int unknown=0x7f0a0065;
+        public static final int unknown_activity_request_code=0x7f0a0066;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */

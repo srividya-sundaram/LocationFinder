@@ -25,7 +25,7 @@ import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.maps.model.MarkerOptions;
+//import com.google.android.gms.maps.model.MarkerOptions;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.location.Address;
@@ -40,12 +40,16 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.AnimationDrawable;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -86,7 +90,7 @@ import android.os.AsyncTask;
  * This the app's main Activity. It provides buttons for requesting the various
  * features of the app, displays the current location, the current address, and
  * the status of the location client and updating services.
- * 
+ * hi
  * {@link #getLocation} gets the current location using the Location Services
  * getLastLocation() function. {@link #getAddress} calls geocoding to get a
  * street address for the current location. {@link #startUpdates} sends a
@@ -99,8 +103,10 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 		GooglePlayServicesClient.ConnectionCallbacks,
 		GooglePlayServicesClient.OnConnectionFailedListener {
 	
-	private int userIcon;
+	//private int userIcon;
 	public final static String EXTRA_MESSAGE = "com.example.android.location.MESSAGE";
+	public final static String RADIUS = "com.example.android.location.RADIUS";
+	public final static String ACTIVITY = "com.example.android.location.ACTIVITY";
 	// A request to connect to Location Services
 	private LocationRequest mLocationRequest;
 
@@ -110,16 +116,6 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 	// Handles to UI widgets
 	private TextView mLatLng;
 	private TextView mAddress;
-	private TextView place1;
-	private TextView place2;
-	private TextView place3;
-	private TextView place4;
-	private TextView place5;
-	private TextView place6;
-	private TextView place7;
-	private TextView place8;
-	private TextView place9;
-	private TextView place10;
 	private ProgressBar mActivityIndicator;
 	private TextView mConnectionState;
 	private TextView mConnectionStatus;
@@ -143,23 +139,16 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
 		//Toast.makeText(this, "Inside Oncreate123()", Toast.LENGTH_SHORT).show();
 
 		// Get handles to the UI view objects
-		mLatLng = (TextView) findViewById(R.id.lat_lng);
-		mAddress = (TextView) findViewById(R.id.address);
-		place1 = (TextView) findViewById(R.id.textView1);
-		place2 = (TextView) findViewById(R.id.textView2);
-		place3 = (TextView) findViewById(R.id.textView3);
-		place4 = (TextView) findViewById(R.id.textView4);
-		place5 = (TextView) findViewById(R.id.textView5);
-		place6 = (TextView) findViewById(R.id.textView6);
-		place7 = (TextView) findViewById(R.id.textView7);
-		place8 = (TextView) findViewById(R.id.textView8);
+		//mLatLng = (TextView) findViewById(R.id.lat_lng);
+		//mAddress = (TextView) findViewById(R.id.address);
 		
-		mActivityIndicator = (ProgressBar) findViewById(R.id.address_progress);
-		mConnectionState = (TextView) findViewById(R.id.text_connection_state);
-		mConnectionStatus = (TextView) findViewById(R.id.text_connection_status);
+		//mActivityIndicator = (ProgressBar) findViewById(R.id.address_progress);
+		//mConnectionState = (TextView) findViewById(R.id.text_connection_state);
+		//mConnectionStatus = (TextView) findViewById(R.id.text_connection_status);
 
 		// Create a new global location parameters object
 		mLocationRequest = LocationRequest.create();
@@ -292,8 +281,8 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 				Log.d(LocationUtils.APPTAG, getString(R.string.resolved));
 
 				// Display the result
-				mConnectionState.setText(R.string.connected);
-				mConnectionStatus.setText(R.string.resolved);
+				//mConnectionState.setText(R.string.connected);
+				//mConnectionStatus.setText(R.string.resolved);
 				break;
 
 			// If any other result was returned by Google Play services
@@ -302,8 +291,8 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 				Log.d(LocationUtils.APPTAG, getString(R.string.no_resolution));
 
 				// Display the result
-				mConnectionState.setText(R.string.disconnected);
-				mConnectionStatus.setText(R.string.no_resolution);
+				//mConnectionState.setText(R.string.disconnected);
+				//mConnectionStatus.setText(R.string.no_resolution);
 
 				break;
 			}
@@ -386,12 +375,29 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 
 	public void getSuggestion(View v) {
 
-		// If Google Play Services is available
 		if (servicesConnected()) {
-			Log.d(" ", "In getSuggestions123");
-			//Toast.makeText(this, "Inside getSuggestion()", Toast.LENGTH_SHORT)
-				//	.show();
-			Location currentLocation = mLocationClient.getLastLocation();
+			Log.d(" ", "In getSuggestions_new");
+			 EditText radius = (EditText) findViewById(R.id.editText1);
+			 String radiusCheck = radius.getText().toString();
+			 //Getting the Selected Activity
+			 RadioGroup rg = (RadioGroup)findViewById(R.id.radioGroup1);
+			RadioButton selected = (RadioButton)findViewById(rg.getCheckedRadioButtonId());
+			String activity = (String) selected.getText();
+			 if(radiusCheck.isEmpty()){
+				Toast.makeText(this, "Please Enter Radius", Toast.LENGTH_SHORT)
+						.show();
+			} else {
+				float miles = Float.valueOf(radius.getText().toString());
+				float meters = (float) (miles * 1609.344);
+				String radiusInMeters = Float.toString(meters);
+				Location currentLocation = mLocationClient.getLastLocation();
+				Intent intent = new Intent(getBaseContext(),
+						DisplayPlacesActivity.class);
+				intent.putExtra(EXTRA_MESSAGE, currentLocation);
+				intent.putExtra(RADIUS, radiusInMeters);
+				intent.putExtra(ACTIVITY, activity);
+				startActivity(intent);
+			}
 			//mLatLng.setText(LocationUtils.getLatLng(this, currentLocation));
 			/*String lat = String.valueOf(currentLocation.getLatitude());
 			String longitude = String.valueOf(currentLocation.getLongitude());
@@ -428,7 +434,7 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 			}
 
 */	
-			(new MainActivity.GetPlaces(this)).execute(currentLocation);
+		//	(new MainActivity.GetPlaces(this)).execute(currentLocation);
 			//Toast.makeText(this, "Called Execute New", Toast.LENGTH_SHORT)
 				//	.show();	
 		}
@@ -463,7 +469,7 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 			Location currentLocation = mLocationClient.getLastLocation();
 
 			// Turn the indefinite activity indicator on
-			mActivityIndicator.setVisibility(View.VISIBLE);
+			//mActivityIndicator.setVisibility(View.VISIBLE);
 
 			// Start the background task
 			(new MainActivity.GetAddressTask(this)).execute(currentLocation);
@@ -510,7 +516,7 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 	@Override
 	public void onConnected(Bundle bundle) {
 		Log.d(" ", "In onConnected");
-		mConnectionStatus.setText(R.string.connected);
+		//mConnectionStatus.setText(R.string.connected);
 		//Toast.makeText(this, "Inside Onconnected()", Toast.LENGTH_SHORT).show();
 		if (mUpdatesRequested) {
 			startPeriodicUpdates();
@@ -523,7 +529,7 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 	 */
 	@Override
 	public void onDisconnected() {
-		mConnectionStatus.setText(R.string.disconnected);
+		//mConnectionStatus.setText(R.string.disconnected);
 	}
 
 	/*
@@ -572,7 +578,7 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 	public void onLocationChanged(Location location) {
 
 		// Report to the UI that the location was updated
-		mConnectionStatus.setText(R.string.location_updated);
+		//mConnectionStatus.setText(R.string.location_updated);
 
 		// In the UI, set the latitude and longitude to the value received
 		mLatLng.setText(LocationUtils.getLatLng(this, location));
@@ -585,7 +591,7 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 	private void startPeriodicUpdates() {
 
 		mLocationClient.requestLocationUpdates(mLocationRequest, this);
-		mConnectionState.setText(R.string.location_requested);
+		//mConnectionState.setText(R.string.location_requested);
 	}
 
 	/**
@@ -594,7 +600,7 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 	 */
 	private void stopPeriodicUpdates() {
 		mLocationClient.removeLocationUpdates(this);
-		mConnectionState.setText(R.string.location_updates_stopped);
+		//mConnectionState.setText(R.string.location_updates_stopped);
 	}
 
 	// New Async Task
@@ -721,7 +727,9 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 				/*for(int i=0;i<places.length;i++){
 					
 				}*/
-				if(places[0]!=null)
+				Intent intent = new Intent(getBaseContext(),DisplayPlacesActivity.class);
+				startActivity(intent);
+				/*if(places[0]!=null)
 					place1.setText(places[0]);
 				if(places[1]!=null)
 					place2.setText(places[1]);
@@ -730,7 +738,7 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 				place5.setText(places[4]);
 				place6.setText(places[5]);
 				place7.setText(places[6]);
-				place8.setText(places[7]);
+				place8.setText(places[7]);*/
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -857,10 +865,10 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 		protected void onPostExecute(String address) {
 
 			// Turn off the progress bar
-			mActivityIndicator.setVisibility(View.GONE);
+			//mActivityIndicator.setVisibility(View.GONE);
 
 			// Set the address in the UI
-			mAddress.setText(address);
+			//mAddress.setText(address);
 		}
 	}
 
