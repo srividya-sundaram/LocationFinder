@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.android.location.suggestion;
+package com.gmail.srivi.sundaram.locgenie;
 
 import com.google.android.gms.common.ConnectionResult;
 import android.content.Context;
 import android.content.res.Resources;
 
-import com.android.location.suggestion.R;
+import com.gmail.srivi.sundaram.locgenie.R;
 
 /**
  * Map error codes to error messages.

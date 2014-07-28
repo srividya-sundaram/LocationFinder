@@ -1,4 +1,4 @@
-package com.example.android.location;
+package com.gmail.srivi.sundaram.locgenie;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -21,6 +21,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import com.gmail.srivi.sundaram.locgenie.R;
 //newly added
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -144,9 +145,9 @@ public class DisplayPlacesActivity extends Activity {
 						+ URLEncoder.encode(
 								"park|rv_park|point_of_interest", "UTF-8")
 						+ "&rankby=prominence"
-						+ "&keyword=\"rv+park\""
+						+ "&keyword=rv+park"
 						+ "&name="
-						+ "\"rv+park\""
+						+ "rv+park"
 						+ "&key="
 						+ URLEncoder.encode(
 								"AIzaSyB7_xx6j2QJPaA_v2XjRTUV7yTYhXfkQgk",
@@ -169,8 +170,8 @@ public class DisplayPlacesActivity extends Activity {
 						+ URLEncoder.encode(
 								"campground", "UTF-8")
 						+ "&rankby=prominence"
-						+ "&name=\"campground\""
-						+ "&keyword=\"campground\""
+						+ "&name=campground"
+						+ "&keyword=campground"
 						+ "&key="
 						+ URLEncoder.encode(
 								"AIzaSyB7_xx6j2QJPaA_v2XjRTUV7yTYhXfkQgk",

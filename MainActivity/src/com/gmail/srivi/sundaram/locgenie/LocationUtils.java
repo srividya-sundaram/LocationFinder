@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-package com.android.location.suggestion;
+package com.gmail.srivi.sundaram.locgenie;
 
 import android.content.Context;
 import android.location.Location;
 
-import com.android.location.suggestion.R;
+import com.gmail.srivi.sundaram.locgenie.R;
 
 /**
  * Defines app-wide constants and utilities
@@ -31,11 +31,11 @@ public final class LocationUtils {
 
     // Name of shared preferences repository that stores persistent state
     public static final String SHARED_PREFERENCES =
-            "com.example.android.location.SHARED_PREFERENCES";
+            "com.gmail.srivi.sundaram.locgenie.SHARED_PREFERENCES";
 
     // Key for storing the "updates requested" flag in shared preferences
     public static final String KEY_UPDATES_REQUESTED =
-            "com.example.android.location.KEY_UPDATES_REQUESTED";
+            "com.gmail.srivi.sundaram.locgenie.KEY_UPDATES_REQUESTED";
 
     /*
      * Define a request code to send to Google Play services
