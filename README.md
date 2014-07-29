@@ -1,4 +1,5 @@
 LOCGENIE
+
 LocGenie – An open source Android application that suggests users places of their preferred activity within their 
 preferred distance in Map View along with their address.
  
