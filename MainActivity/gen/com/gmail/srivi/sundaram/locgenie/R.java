@@ -1519,7 +1519,7 @@ containing a value of this type.
         public static final int support_simple_spinner_dropdown_item=0x7f030019;
     }
     public static final class string {
-        public static final int IO_Exception_getFromLocation=0x7f0a0052;
+        public static final int IO_Exception_getFromLocation=0x7f0a0050;
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
         public static final int abc_action_bar_home_description=0x7f0a0001;
@@ -1692,45 +1692,43 @@ containing a value of this type.
         public static final int fishing=0x7f0a0045;
         /**  Buttons 
          */
-        public static final int get_address=0x7f0a004b;
-        public static final int get_location=0x7f0a004c;
-        public static final int get_radius=0x7f0a004d;
-        public static final int hello_world=0x7f0a0068;
+        public static final int get_radius=0x7f0a004b;
+        public static final int hello_world=0x7f0a0066;
         /**  Activities 
          */
         public static final int hiking=0x7f0a0042;
-        public static final int illegal_argument_exception=0x7f0a004f;
-        public static final int invalid_action=0x7f0a0050;
-        public static final int invalid_integer_id=0x7f0a0051;
+        public static final int illegal_argument_exception=0x7f0a004d;
+        public static final int invalid_action=0x7f0a004e;
+        public static final int invalid_integer_id=0x7f0a004f;
         /**  Latitude, longitude format 
          */
         public static final int latitude_longitude=0x7f0a003f;
-        public static final int location_requested=0x7f0a0053;
-        public static final int location_update_error=0x7f0a0055;
-        public static final int location_update_error_detail=0x7f0a0056;
-        public static final int location_update_missing_update=0x7f0a0057;
-        public static final int location_updated=0x7f0a0054;
-        public static final int location_updates_stopped=0x7f0a0058;
-        public static final int log_new_location=0x7f0a0059;
-        public static final int no_address_found=0x7f0a005a;
-        public static final int no_connection=0x7f0a005b;
-        public static final int no_geocoder_available=0x7f0a005c;
-        public static final int no_location_available=0x7f0a005d;
-        public static final int no_resolution=0x7f0a005f;
-        public static final int periodic_update_stop=0x7f0a0060;
-        public static final int play_services_available=0x7f0a0061;
+        public static final int location_requested=0x7f0a0051;
+        public static final int location_update_error=0x7f0a0053;
+        public static final int location_update_error_detail=0x7f0a0054;
+        public static final int location_update_missing_update=0x7f0a0055;
+        public static final int location_updated=0x7f0a0052;
+        public static final int location_updates_stopped=0x7f0a0056;
+        public static final int log_new_location=0x7f0a0057;
+        public static final int no_address_found=0x7f0a0058;
+        public static final int no_connection=0x7f0a0059;
+        public static final int no_geocoder_available=0x7f0a005a;
+        public static final int no_location_available=0x7f0a005b;
+        public static final int no_resolution=0x7f0a005d;
+        public static final int periodic_update_stop=0x7f0a005e;
+        public static final int play_services_available=0x7f0a005f;
         /**  Labels 
          */
         public static final int radius=0x7f0a0041;
-        public static final int request_location_updates_in_progress=0x7f0a0062;
-        public static final int resolved=0x7f0a005e;
+        public static final int request_location_updates_in_progress=0x7f0a0060;
+        public static final int resolved=0x7f0a005c;
         public static final int rv_park=0x7f0a0043;
-        public static final int start_updates=0x7f0a0063;
-        public static final int stop_updates=0x7f0a0064;
-        public static final int suggestions=0x7f0a004e;
-        public static final int title_activity_display_places=0x7f0a0067;
-        public static final int unknown=0x7f0a0065;
-        public static final int unknown_activity_request_code=0x7f0a0066;
+        public static final int start_updates=0x7f0a0061;
+        public static final int stop_updates=0x7f0a0062;
+        public static final int suggestions=0x7f0a004c;
+        public static final int title_activity_display_places=0x7f0a0065;
+        public static final int unknown=0x7f0a0063;
+        public static final int unknown_activity_request_code=0x7f0a0064;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */

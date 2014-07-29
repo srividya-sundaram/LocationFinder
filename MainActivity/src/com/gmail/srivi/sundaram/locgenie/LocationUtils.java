@@ -1,18 +1,37 @@
-/*
- * Copyright (C) 2013 The Android Open Source Project
+/*******************************************************************************
  *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * LocGenie – An open source Android application that suggests users places of their preferred activity within their 
+ * preferred distance in Map View along with their address.
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * Copyright (C) 2014 Srividya Sundaram
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+ * This program is free software: you can redistribute it and/or modify it under 
+ * the terms of the GNU General Public License as published by the Free Software Foundation, 
+ * either version 3 of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+ * See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License along with this program. 
+ * If not, see http://www.gnu.org/licenses/.
+ *
+ * Following is the link for the repository: https://github.com/Srividya2212/LocationFinder
+ *
+ * Please, see the file license in this distribution for license terms. Link is
+ * https://github.com/Srividya2212/LocationFinder/blob/master/LICENSE.md
+ *
+ * References:
+ * https://developers.google.com/maps/documentation/android/start#getting_the_google_maps_android_api_v2
+ * https://developers.google.com/maps/documentation/android/
+ * https://developers.google.com/places/documentation/
+ * https://developers.google.com/places/documentation/search
+ * http://stackoverflow.com/questions/9605913/how-to-parse-json-in-android
+ *
+ * Author - Srividya Sundaram
+ * email: srividya@pdx.edu
+ *
+ *  ******************************************************************************************/
 
 package com.gmail.srivi.sundaram.locgenie;
 
