@@ -31,7 +31,6 @@
  * email: srividya@pdx.edu
  *
  *  ******************************************************************************************/
- 
 
 package com.gmail.srivi.sundaram.locgenie;
 
@@ -119,7 +118,6 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 	// A request to connect to Location Services
 	private LocationRequest mLocationRequest;
 
-	// Stores the current instantiation of the location client in this object
 	private LocationClient mLocationClient;
 
 	// Handles to UI widgets
@@ -135,13 +133,8 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 	// Handle to a SharedPreferences editor
 	SharedPreferences.Editor mEditor;
 
-	/*
-	 * Note if updates have been turned on. Starts out as "false"; is set to
-	 * "true" in the method handleRequestSuccess of LocationUpdateReceiver.
-	 */
 	boolean mUpdatesRequested = false;
 
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -373,34 +366,7 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 				intent.putExtra(ACTIVITY, activity);
 				startActivity(intent);
 			}
-			// mLatLng.setText(LocationUtils.getLatLng(this, currentLocation));
-			/*
-			 * String lat = String.valueOf(currentLocation.getLatitude());
-			 * String longitude =
-			 * String.valueOf(currentLocation.getLongitude()); String url; try {
-			 * url =
-			 * "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="
-			 * + URLEncoder.encode(lat, "UTF-8") + "," +
-			 * URLEncoder.encode(longitude, "UTF-8") + "&radius=" +
-			 * URLEncoder.encode("5000", "UTF-8") + "&sensor=" +
-			 * URLEncoder.encode("false", "UTF-8") + "&types=" +
-			 * URLEncoder.encode( "food|bar|church|museum|art_gallery", "UTF-8")
-			 * + "&key=" + URLEncoder.encode(
-			 * "AIzaSyB7_xx6j2QJPaA_v2XjRTUV7yTYhXfkQgk", "UTF-8");
-			 * Log.d("url ----->", url); // new GetPlaces().execute(url);
-			 * 
-			 * 
-			 * Intent intent = new Intent(this, DisplayPlacesActivity.class);
-			 * EditText editText = (EditText) findViewById(R.id.edit_message);
-			 * String message = editText.getText().toString();
-			 * intent.putExtra(EXTRA_MESSAGE, message); startActivity(intent);
-			 * 
-			 * } catch (UnsupportedEncodingException e) { e.printStackTrace(); }
-			 * finally { }
-			 */
-			// (new MainActivity.GetPlaces(this)).execute(currentLocation);
-			// Toast.makeText(this, "Called Execute New", Toast.LENGTH_SHORT)
-			// .show();
+			
 		}
 	}
 
@@ -566,144 +532,6 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 	private void stopPeriodicUpdates() {
 		mLocationClient.removeLocationUpdates(this);
 		// mConnectionState.setText(R.string.location_updates_stopped);
-	}
-
-	// New Async Task
-
-	protected class GetPlaces extends AsyncTask<Location, Void, String> {
-
-		Context localContext;
-
-		// Constructor called by the system to instantiate the task
-		public GetPlaces(Context context) {
-
-			// Required by the semantics of AsyncTask
-			super();
-
-			// Set a Context for the background task
-			localContext = context;
-		}
-
-		String name = "";
-
-		protected String doInBackground(Location... params) {
-			EditText radius = (EditText) findViewById(R.id.editText1);
-			float miles = Float.valueOf(radius.getText().toString());
-			float meters = (float) (miles * 1609.344);
-			String radiusInMeters = Float.toString(meters);
-
-			Location location = params[0];
-			String lat = String.valueOf(location.getLatitude());
-			String longitude = String.valueOf(location.getLongitude());
-			String url;
-			StringBuilder placesBuilder = new StringBuilder();
-			HttpClient placesClient = new DefaultHttpClient();
-			try {
-				url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="
-						+ URLEncoder.encode(lat, "UTF-8")
-						+ ","
-						+ URLEncoder.encode(longitude, "UTF-8")
-						+ "&radius="
-						+ URLEncoder.encode(radiusInMeters, "UTF-8")
-						+ "&sensor="
-						+ URLEncoder.encode("false", "UTF-8")
-						+ "&types="
-						+ URLEncoder
-								.encode("amusement_park|aquarium|art_gallery|bowling_alley|church|museum|night_club|park|zoo|point_of_interest",
-										"UTF-8")
-						+ "&rankby=prominence"
-						+ "&keyword=hiking"
-						+ "&key="
-						+ URLEncoder.encode(
-								"AIzaSyB7_xx6j2QJPaA_v2XjRTUV7yTYhXfkQgk",
-								"UTF-8");
-				Log.d("url ----->", url);
-
-				HttpGet placesGet = new HttpGet(url);
-				HttpResponse placesResponse = placesClient.execute(placesGet);
-				StatusLine placeSearchStatus = placesResponse.getStatusLine();
-				if (placeSearchStatus.getStatusCode() == 200) {
-					// we have an OK response
-					HttpEntity placesEntity = placesResponse.getEntity();
-					InputStream placesContent = placesEntity.getContent();
-					InputStreamReader placesInput = new InputStreamReader(
-							placesContent);
-					BufferedReader placesReader = new BufferedReader(
-							placesInput);
-					String lineIn;
-					while ((lineIn = placesReader.readLine()) != null) {
-						placesBuilder.append(lineIn);
-					}
-				}
-				// try to fetch the data
-
-			} catch (UnsupportedEncodingException e) {
-				e.printStackTrace();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
-			// }
-			return placesBuilder.toString();
-		}
-
-		// fetch and parse place data
-
-		protected void onPostExecute(String result) {
-			// parse place data returned from Google Places
-			try {
-				// parse JSON
-				JSONObject resultObject = new JSONObject(result);
-				JSONArray placesArray = resultObject.getJSONArray("results");
-				// loop through places
-				// MarkerOptions places[] = new
-				// MarkerOptions[placesArray.length()];
-				// Intent intent = new
-				// Intent(getBaseContext(),DisplayPlacesActivity.class);
-				// EditText editText = (EditText)
-				// findViewById(R.id.edit_message);
-				// String message = editText.getText().toString();
-				// intent.putExtra(EXTRA_MESSAGE, name);
-				// startActivity(intent
-				/*
-				 * if(placesArray.length()>=10)
-				 */
-
-				String[] places = new String[placesArray.length()];
-				for (int p = 0; p < placesArray.length(); p++) {
-					// parse each place
-					try {
-						// attempt to retrieve place data values
-						JSONObject placeObject = placesArray.getJSONObject(p);
-						name = placeObject.getString("name");
-						places[p] = name;
-						// intent.putExtra(EXTRA_MESSAGE, name);
-						// startActivity(intent);
-
-					} catch (JSONException jse) {
-						// missingValue=true;
-						jse.printStackTrace();
-					}
-				}
-				/*
-				 * for(int i=0;i<places.length;i++){
-				 * 
-				 * }
-				 */
-				Intent intent = new Intent(getBaseContext(),
-						DisplayPlacesActivity.class);
-				startActivity(intent);
-				/*
-				 * if(places[0]!=null) place1.setText(places[0]);
-				 * if(places[1]!=null) place2.setText(places[1]);
-				 * place3.setText(places[2]); place4.setText(places[3]);
-				 * place5.setText(places[4]); place6.setText(places[5]);
-				 * place7.setText(places[6]); place8.setText(places[7]);
-				 */
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
 	}
 
 	/**
