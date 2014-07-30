@@ -31,4 +31,24 @@ preferred distance in Map View along with their address.
  Author - Srividya Sundaram
  email: srividya@pdx.edu
  
- 
+**********************************************************************
+Names:
+======
+Srividya Sundaram
+
+Project Name:
+============
+LocGenie
+
+Contact Information:
+=================
+srividya@pdx.edu
+
+Project Description:
+================
+LocGenie is an Android app that suggests users places for hiking, camping, fishing, bowling or an RV-Park from their current location. The user is given the option of choosing one of the activity - Hiking, RV-Park, Camping, Fishing, Bowling. The app also allows the user to enter his/her preferred distance within which they are looking for places. LocGenie displays the suggestions in a Map along with their address. 
+
+The application is developed in JAVA.  Google Places API and Google Maps Android API v2 is used to fetch places and display them in Map View. The suggested places are highlighted using map markers.
+
+
+
