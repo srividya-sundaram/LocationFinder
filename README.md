@@ -50,5 +50,16 @@ LocGenie is an Android app that suggests users places for hiking, camping, fishi
 
 The application is developed in JAVA.  Google Places API and Google Maps Android API v2 is used to fetch places and display them in Map View. The suggested places are highlighted using map markers.
 
+License Information:
+================
+Please check the below link to get the file license in this distribution.
+Link : https://github.com/Srividya2212/LocationFinder/blob/master/LICENSE.md
+
+Source Code:
+=========
+The source code can be found at the following repository
+Link for repository : https://github.com/Srividya2212/LocationFinder/tree/master/MainActivity
+
+
 
 
