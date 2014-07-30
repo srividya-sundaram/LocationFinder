@@ -1,9 +1,7 @@
 LOCGENIE
-
+Copyright (C) 2014 Srividya Sundaram
 LocGenie – An open source Android application that suggests users places of their preferred activity within their 
 preferred distance in Map View along with their address.
- 
- Copyright (C) 2014 Srividya Sundaram
  
  This program is free software: you can redistribute it and/or modify it under 
  the terms of the GNU General Public License as published by the Free Software Foundation, 
