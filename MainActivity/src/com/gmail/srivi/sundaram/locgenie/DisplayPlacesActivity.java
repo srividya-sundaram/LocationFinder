@@ -52,6 +52,9 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
+import android.content.Context;
+
 import com.gmail.srivi.sundaram.locgenie.R;
 //newly added
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -341,10 +344,16 @@ public class DisplayPlacesActivity extends Activity {
 				e.printStackTrace();
 			}
 			if (places != null && placeMarkers != null) {
+				if(places.length == 0){
+					Toast.makeText(getBaseContext(), "Please increase your search radius",
+							Toast.LENGTH_LONG).show();
+					
+				}else{
 				for (int p = 0; p < places.length && p < placeMarkers.length; p++) {
 					if (places[p] != null)
 						placeMarkers[p] = theMap.addMarker(places[p]);
 				}
+			}
 			}
 
 		}

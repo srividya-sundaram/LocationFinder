@@ -1,36 +1,36 @@
 /******************************************************************************* 
- * LocGenie – An open source Android application that suggests users places of their preferred activity within their 
- * preferred distance in Map View along with their address.
- *
- * Copyright (C) 2014 Srividya Sundaram
- *
- * This program is free software: you can redistribute it and/or modify it under 
- * the terms of the GNU General Public License as published by the Free Software Foundation, 
- * either version 3 of the License, or (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
- * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
- * See the GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License along with this program. 
- * If not, see http://www.gnu.org/licenses/.
- *
- * Following is the link for the repository: https://github.com/Srividya2212/LocationFinder
- *
- * Please, see the file license in this distribution for license terms. Link is
- * https://github.com/Srividya2212/LocationFinder/blob/master/LICENSE.md
- *
- * References:
- * https://developers.google.com/maps/documentation/android/start#getting_the_google_maps_android_api_v2
- * https://developers.google.com/maps/documentation/android/
- * https://developers.google.com/places/documentation/
- * https://developers.google.com/places/documentation/search
- * http://stackoverflow.com/questions/9605913/how-to-parse-json-in-android
- *
- * Author - Srividya Sundaram
- * email: srividya@pdx.edu
- *
- *  ******************************************************************************************/
+  LocGenie – An open source Android application that suggests users places of their preferred activity within their 
+  preferred distance in Map View along with their address.
+ 
+  Copyright (C) 2014 Srividya Sundaram
+ 
+  This program is free software: you can redistribute it and/or modify it under 
+  the terms of the GNU General Public License as published by the Free Software Foundation, 
+  either version 3 of the License, or (at your option) any later version.
+ 
+  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+  without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+  See the GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU General Public License along with this program. 
+  If not, see http://www.gnu.org/licenses/.
+ 
+  Following is the link for the repository: https://github.com/Srividya2212/LocationFinder
+ 
+  Please, see the file license in this distribution for license terms. Link is
+  https://github.com/Srividya2212/LocationFinder/blob/master/LICENSE.md
+ 
+  References:
+  https://developers.google.com/maps/documentation/android/start#getting_the_google_maps_android_api_v2
+  https://developers.google.com/maps/documentation/android/
+  https://developers.google.com/places/documentation/
+  https://developers.google.com/places/documentation/search
+  http://stackoverflow.com/questions/9605913/how-to-parse-json-in-android
+ 
+ Author - Srividya Sundaram
+ email: srividya@pdx.edu
+
+******************************************************************************************/
 
 package com.gmail.srivi.sundaram.locgenie;
 
@@ -60,6 +60,7 @@ import android.graphics.drawable.AnimationDrawable;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -134,11 +135,19 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 	SharedPreferences.Editor mEditor;
 
 	boolean mUpdatesRequested = false;
+	AnimationDrawable frameAnimation;
+	ImageView view;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		view = (ImageView) findViewById(R.id.imageAnimation);
+
+		view.setBackgroundResource(R.drawable.anim);
+
+		frameAnimation = (AnimationDrawable) view.getBackground();
+		
 		mLocationRequest = LocationRequest.create();
 		mLocationRequest
 				.setInterval(LocationUtils.UPDATE_INTERVAL_IN_MILLISECONDS);
@@ -152,6 +161,17 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 		mLocationClient = new LocationClient(this, this, this);
 	}
 
+	@Override
+	public void onWindowFocusChanged(boolean hasFocus) {
+	    super.onWindowFocusChanged(hasFocus);
+	      if (hasFocus) {
+		// Starting the animation when in Focus
+		frameAnimation.start();
+		} else {
+		frameAnimation.stop();
+	      }
+	}
+	
 	/*
 	 * Called when the Activity is no longer visible at all. Stop updates and
 	 * disconnect.

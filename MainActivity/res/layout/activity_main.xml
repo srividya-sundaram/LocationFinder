@@ -39,7 +39,7 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back5" >
+    android:background="@drawable/bg2" >
 
     <!--
          <TextView
@@ -274,7 +274,16 @@
         android:onClick="getSuggestion"
         android:text="@string/suggestions"
         android:textSize="20sp"
-        android:textStyle="bold" />
-    
+        android:textStyle="bold"
+         />
+
+    <ImageView
+        android:id="@+id/imageAnimation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_suggestions"
+        android:layout_marginTop="55dp"
+        android:layout_toRightOf="@+id/radioGroup1"
+        android:adjustViewBounds="true" />
 
 </RelativeLayout>
