@@ -52,5 +52,11 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+     <style name="customTheme" parent="AppBaseTheme">
+        <item name="android:typeface">monospace</item>
+        <item name="android:fontFamily">sans-serif</item>
+		<item name="android:textStyle">bold</item>
+
+     </style>
 
 </resources>

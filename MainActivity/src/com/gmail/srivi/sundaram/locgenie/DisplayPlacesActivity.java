@@ -51,26 +51,34 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.widget.Toast;
 import android.content.Context;
 
 import com.gmail.srivi.sundaram.locgenie.R;
+import com.gmail.srivi.sundaram.locgenie.TouchableWrapper.UpdateMapAfterUserInterection;
 //newly added
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.OnCameraChangeListener;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.VisibleRegion;
+
 import android.location.Location;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 
-public class DisplayPlacesActivity extends Activity {
+public class DisplayPlacesActivity extends FragmentActivity implements UpdateMapAfterUserInterection {
+	public static boolean mMapIsTouched = false;
 	private int userIcon;
 
 	private GoogleMap theMap;
@@ -79,6 +87,9 @@ public class DisplayPlacesActivity extends Activity {
 
 	private Marker userMarker;
 	public static String radiusMain = null;
+	public static String activity = null;
+	public static String latitude = null;
+	public static String longitude = null;
 	private Marker[] placeMarkers;
 	private final int MAX_PLACES = 20;// most returned from google
 	// marker options
@@ -94,18 +105,36 @@ public class DisplayPlacesActivity extends Activity {
 		String radius = intent.getStringExtra(MainActivity.RADIUS);
 		String activityChosen = intent.getStringExtra(MainActivity.ACTIVITY);
 		radiusMain = radius;
+		activity = activityChosen;
 		userIcon = R.drawable.user;
 
 		if (theMap == null) {
-			theMap = ((MapFragment) getFragmentManager().findFragmentById(
-					R.id.map)).getMap();
+			SupportMapFragment mapFrag = (SupportMapFragment) getSupportFragmentManager()
+                    .findFragmentById(R.id.map);
+			theMap=mapFrag.getMap();
+			/*theMap = ((MapFragment) getFragmentManager().findFragmentById(
+					R.id.map)).getMap();*/
 			if (theMap != null) {
 				theMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 				placeMarkers = new Marker[MAX_PLACES];
 			}
 
 		}
+		
+		double lat = loc.getLatitude();
+		double lng = loc.getLongitude();
+		LatLng lastLatLng = new LatLng(lat, lng);
+		theMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lastLatLng, 8));
+		if (userMarker != null)
+			userMarker.remove();
+		userMarker = theMap.addMarker(new MarkerOptions().position(lastLatLng)
+				.anchor(0.0f, 1.0f).title("You are currently here")
+				.icon(BitmapDescriptorFactory.fromResource(userIcon))
+				.snippet("Your most recent location"));
+	
 		displayPlaces(loc, radius, activityChosen);
+		
+		
 
 	}
 
@@ -113,29 +142,18 @@ public class DisplayPlacesActivity extends Activity {
 			String activityChosen) {
 		double lat = loc.getLatitude();
 		double lng = loc.getLongitude();
-		LatLng lastLatLng = new LatLng(lat, lng);
-		theMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lastLatLng, 15));
-		// theMap.animateCamera(CameraUpdateFactory.zoomTo(14), 2000, null);
-		if (userMarker != null)
-			userMarker.remove();
-		userMarker = theMap.addMarker(new MarkerOptions().position(lastLatLng)
-				.anchor(0.0f, 1.0f).title("You are currently here")
-				.icon(BitmapDescriptorFactory.fromResource(userIcon))
-				.snippet("Your most recent location"));
-		// theMap.animateCamera(CameraUpdateFactory.newLatLng(lastLatLng), 3000,
-		// null);
-		CameraPosition cameraPosition = CameraPosition.builder()
-				.target(lastLatLng).zoom(12).bearing(90).build();
-
-		// Animate the change in camera view over 2 seconds
-		theMap.animateCamera(
+		
+		//CameraPosition cameraPosition = CameraPosition.builder()
+				//.target(lastLatLng).zoom(12).bearing(90).build();
+		/*//theMap.animateCamera(
 				CameraUpdateFactory.newCameraPosition(cameraPosition), 2000,
-				null);
-
-		String latitude = String.valueOf(lat);
-		String longitude = String.valueOf(lng);
+				null);*/
+		 latitude = String.valueOf(lat);
+		 longitude = String.valueOf(lng);
 		String url;
 		StringBuilder placesBuilder = new StringBuilder();
+		
+		
 		// https://maps.googleapis.com/maps/api/place/nearbysearch/json?
 		// location=45.5126003,-122.6855891&radius=482803.2&sensor=false&
 		// types=park|campground|point_of_interest&rankby=prominence&keyword=trailhead&key=AIzaSyB7_xx6j2QJPaA_v2XjRTUV7yTYhXfkQgk
@@ -262,6 +280,11 @@ public class DisplayPlacesActivity extends Activity {
 		}
 
 	}
+	
+	
+	
+	
+	
 
 	private class GetPlaces extends AsyncTask<String, Void, String> {
 		int placesIcon = R.drawable.small_flag;
@@ -346,7 +369,7 @@ public class DisplayPlacesActivity extends Activity {
 			if (places != null && placeMarkers != null) {
 				if(places.length == 0){
 					Toast.makeText(getBaseContext(), "Please increase your search radius",
-							Toast.LENGTH_LONG).show();
+							Toast.LENGTH_SHORT).show();
 					
 				}else{
 				for (int p = 0; p < places.length && p < placeMarkers.length; p++) {
@@ -357,5 +380,42 @@ public class DisplayPlacesActivity extends Activity {
 			}
 
 		}
+	}
+
+
+
+
+
+
+	@Override
+	public void onUpdateMapAfterUserInterection() {
+		// TODO Auto-generated method stub
+		theMap.setOnCameraChangeListener(new OnCameraChangeListener() {
+		    @Override
+		    public void onCameraChange(CameraPosition cameraPosition) {
+		    	LatLng centerPosition = theMap.getCameraPosition().target;
+		    	//latitude = Double.toString(centerPosition.latitude) ;
+		    	//longitude = Double.toString(centerPosition.longitude);
+		    	
+		    	VisibleRegion vr = theMap.getProjection().getVisibleRegion();
+		    	double left = vr.latLngBounds.southwest.longitude;
+		    	double bottom = vr.latLngBounds.southwest.latitude;
+		    	double top = vr.latLngBounds.northeast.latitude;
+		    	double right = vr.latLngBounds.northeast.longitude;
+		    	Location bottomLeft = new Location("try");
+		    	bottomLeft.setLatitude(bottom);
+		    	bottomLeft.setLongitude(left);
+		    	Location center=new Location("center");
+		    	center.setLatitude( vr.latLngBounds.getCenter().latitude);
+		    	center.setLongitude( vr.latLngBounds.getCenter().longitude);
+		    	float dis = center.distanceTo(bottomLeft);
+		    	String newRadius = Double.toString(dis);
+		    	
+		    	
+		    	//LatLngBounds curScreen = theMap.getProjection().getVisibleRegion().latLngBounds;
+		    	displayPlaces(center, newRadius, activity);
+		    	}
+		    });
+		
 	}
 }

@@ -203,45 +203,6 @@
         android:textSize="12sp" />
     -->
 
-    <RadioGroup
-        android:id="@+id/radioGroup1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/label_radius"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="25dp" >
-
-        <RadioButton
-            android:id="@+id/hiking"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="@string/hiking" />
-
-        <RadioButton
-            android:id="@+id/rv_park"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/rv_park" />
-
-        <RadioButton
-            android:id="@+id/camping"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/camping" />
-        <RadioButton
-        android:id="@+id/fishing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/fishing" />
-
-    <RadioButton
-        android:id="@+id/bowling"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/bowling" />
-    </RadioGroup>
-
     <TextView
         android:id="@+id/label_radius"
         android:layout_width="wrap_content"
@@ -277,13 +238,101 @@
         android:textStyle="bold"
          />
 
-    <ImageView
-        android:id="@+id/imageAnimation"
+    <RadioGroup
+        android:id="@+id/radioGroup1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button_suggestions"
-        android:layout_marginTop="55dp"
-        android:layout_toRightOf="@+id/radioGroup1"
-        android:adjustViewBounds="true" />
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="48dp" >
+
+        <RadioButton
+            android:id="@+id/hiking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:checked="true"
+            android:text="@string/hiking" />
+
+        <RadioButton
+            android:id="@+id/rv_park"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rv_park" />
+
+        <RadioButton
+            android:id="@+id/camping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/camping" />
+
+        <RadioButton
+            android:id="@+id/fishing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fishing" />
+
+        <RadioButton
+            android:id="@+id/bowling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bowling" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView1"
+        style="@style/customTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/question"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/label_radius"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/hiking32" android:contentDescription="hiking"/>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginTop="16dp"
+        android:layout_toLeftOf="@+id/radioGroup1"
+        android:src="@drawable/rvpark32" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_below="@+id/imageView2"
+        android:layout_marginTop="11dp"
+        android:src="@drawable/camping32" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView3"
+        android:layout_toLeftOf="@+id/radioGroup1"
+         android:layout_marginTop="8dp"
+        android:src="@drawable/fishing32" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/radioGroup1"
+        android:layout_toLeftOf="@+id/radioGroup1"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/bowl32" />
 
 </RelativeLayout>

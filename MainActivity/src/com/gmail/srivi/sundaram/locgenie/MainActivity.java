@@ -142,11 +142,6 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		view = (ImageView) findViewById(R.id.imageAnimation);
-
-		view.setBackgroundResource(R.drawable.anim);
-
-		frameAnimation = (AnimationDrawable) view.getBackground();
 		
 		mLocationRequest = LocationRequest.create();
 		mLocationRequest
@@ -161,7 +156,7 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 		mLocationClient = new LocationClient(this, this, this);
 	}
 
-	@Override
+/*	@Override
 	public void onWindowFocusChanged(boolean hasFocus) {
 	    super.onWindowFocusChanged(hasFocus);
 	      if (hasFocus) {
@@ -170,7 +165,7 @@ public class MainActivity extends FragmentActivity implements LocationListener,
 		} else {
 		frameAnimation.stop();
 	      }
-	}
+	}*/
 	
 	/*
 	 * Called when the Activity is no longer visible at all. Stop updates and

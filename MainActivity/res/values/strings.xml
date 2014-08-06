@@ -73,6 +73,7 @@
     <!-- Buttons -->
     <string name="get_radius">Distance</string>
     <string name="suggestions">Suggestions</string>
+    <string name="question"> Pick an activity of your choice!</string>
     <string name="illegal_argument_exception">        Illegal arguments: Latitude %1$.8f Longitude %2$.8f</string>
     <string name="invalid_action">Invalid intent action %1$s</string>
     <string name="invalid_integer_id">Invalid integer request ID: %1$s</string>
