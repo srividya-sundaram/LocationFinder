@@ -368,7 +368,7 @@ public class DisplayPlacesActivity extends FragmentActivity implements UpdateMap
 			}
 			if (places != null && placeMarkers != null) {
 				if(places.length == 0){
-					Toast.makeText(getBaseContext(), "Please increase your search radius",
+					Toast.makeText(getBaseContext(), "No places found within this area!",
 							Toast.LENGTH_SHORT).show();
 					
 				}else{
