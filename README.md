@@ -61,6 +61,52 @@ Source Code:
 The source code can be found at the following repository
 Link for repository : https://github.com/Srividya2212/LocationFinder/tree/master/MainActivity
 
+Developer Documents:
+===================
+Please click on the links below to find developer documents
+Github Manual
+https://github.com/Srividya2212/LocationFinder/blob/master/Docs/GitHub_Manual.pdf
+
+Google Maps API Key Generation
+https://github.com/Srividya2212/LocationFinder/blob/master/Docs/GoogleMapsAPIKeyGeneration.pdf
+
+Google Places API Key Generation
+https://github.com/Srividya2212/LocationFinder/blob/master/Docs/GooglePlacesAPIKeyGeneration.pdf
+
+
+User Documents:
+===============
+Please click on the links below to find user documents:
+Guide for .apk installation:
+https://github.com/Srividya2212/LocationFinder/blob/master/Docs/Guide%20for%20APK%20Installation.pdf
+
+Build Instruction:
+==================
+Click on the link below to find Build Instruction
+https://github.com/Srividya2212/LocationFinder/blob/master/Docs/InstallationGuideForDevelopers.pdf
+
+Pre-requisites
+==============
+1.	Internet Connection.
+2.	Android device.
+3.	Google Play Services installed in the android device.
+4.	Your own Google Places API Key and Google Maps API Key generated from your Google account.
+
+Future Enhancements:
+====================
+1.	Add more activities that can be chosen.(rafting, parasailing etc)
+2.	Calculate distance from users current location to the suggested places.
+3.	Predict climatic conditions of those places 
+on the current day and suggest the best place to visit among all the
+4.	places suggested.
+5.	Suggest nearby eat outs along with the places.
+
+Final Presentation:
+===================
+https://github.com/Srividya2212/LocationFinder/blob/master/Docs/Loc%20Genie_ppt.pptx
+
+
+
 
 
 
