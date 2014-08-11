@@ -104,9 +104,8 @@ Future Enhancements:
 1.	Add more activities that can be chosen.(rafting, parasailing etc)
 2.	Calculate distance from users current location to the suggested places.
 3.	Predict climatic conditions of those places 
-on the current day and suggest the best place to visit among all the
-4.	places suggested.
-5.	Suggest nearby eat outs along with the places.
+   on the current day and suggest the best place to visit among all the places suggested.
+4.	Suggest nearby eat outs along with the places.
 
 Final Presentation:
 ===================
