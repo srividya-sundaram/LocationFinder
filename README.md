@@ -6,6 +6,7 @@ Copyright (C) 2014 Srividya Sundaram
 LocGenie – An open source Android application that suggests users places of their preferred activity within their 
 preferred distance in Map View along with their address.Also displays places dynamically whenever user drags the map view to a different region.
  
+ Coding was done in JAVA with Android API Level 20.
  This program is free software: you can redistribute it and/or modify it under 
  the terms of the GNU General Public License as published by the Free Software Foundation, 
  either version 3 of the License, or (at your option) any later version.
