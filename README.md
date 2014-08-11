@@ -85,6 +85,11 @@ Build Instruction:
 Click on the link below to find Build Instruction
 https://github.com/Srividya2212/LocationFinder/blob/master/Docs/InstallationGuideForDevelopers.pdf
 
+
+User Manual
+============
+https://github.com/Srividya2212/LocationFinder/blob/master/Docs/User%20Manual.pdf
+
 Pre-requisites
 ==============
 1.	Internet Connection.
