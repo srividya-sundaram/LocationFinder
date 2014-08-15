@@ -6,6 +6,8 @@ Copyright (C) 2014 Srividya Sundaram
 LocGenie – An open source Android application that suggests users places of their preferred activity within their 
 preferred distance in Map View along with their address.Also displays places dynamically whenever user drags the map view to a different region.
  
+ Coding was done in JAVA with Android API Level 20.
+ 
  This program is free software: you can redistribute it and/or modify it under 
  the terms of the GNU General Public License as published by the Free Software Foundation, 
  either version 3 of the License, or (at your option) any later version.
@@ -85,6 +87,11 @@ Build Instruction:
 Click on the link below to find Build Instruction
 https://github.com/Srividya2212/LocationFinder/blob/master/Docs/InstallationGuideForDevelopers.pdf
 
+
+User Manual
+============
+https://github.com/Srividya2212/LocationFinder/blob/master/Docs/User%20Manual.pdf
+
 Pre-requisites
 ==============
 1.	Internet Connection.
@@ -97,9 +104,14 @@ Future Enhancements:
 1.	Add more activities that can be chosen.(rafting, parasailing etc)
 2.	Calculate distance from users current location to the suggested places.
 3.	Predict climatic conditions of those places 
-on the current day and suggest the best place to visit among all the
-4.	places suggested.
-5.	Suggest nearby eat outs along with the places.
+   on the current day and suggest the best place to visit among all the places suggested.
+4.	Suggest nearby eat outs along with the places.
+
+
+Issue Tracker/Bug Tracker
+==========================
+https://github.com/Srividya2212/LocationFinder/labels/bug
+
 
 Final Presentation:
 ===================
