@@ -107,6 +107,12 @@ Future Enhancements:
    on the current day and suggest the best place to visit among all the places suggested.
 4.	Suggest nearby eat outs along with the places.
 
+
+Issue Tracker/Bug Tracker
+==========================
+https://github.com/Srividya2212/LocationFinder/labels/bug
+
+
 Final Presentation:
 ===================
 https://github.com/Srividya2212/LocationFinder/blob/master/Docs/Loc%20Genie_ppt.pptx
